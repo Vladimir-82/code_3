@@ -1,3 +1,4 @@
-gen = (i for i in range(1, 27))
-print(next(gen))
-print(next(gen))
+a = 'abcd'
+
+word = set(a) - set('abc')
+print(str(word))

@@ -1,14 +1,18 @@
-ALFHABET = list('abcdefghijklmnopqrstuvwxyz')
-NUMBERS = [str(i) for i in range(1, 27)]
-def alphabet_position(text):
-    my_dict = dict(zip(ALFHABET, NUMBERS))
-    res = ''
-    for i in text.lower():
-        if i in my_dict.keys():
-            res += my_dict[i] + " "
-    return res.strip()
+def greatest_common_factor(seq):
+    """
+    Greatest Common Factor of an Array
+    """
+    minimum = min(seq)
+    work = seq[:]
+    while work:
+        if not work[0] % minimum:
+            del work[0]
+            if not work:
+                return minimum
+        else:
+            minimum -= 1
+            work = seq[:]
 
-print(alphabet_position("The sunset sets at twelve o' clock."))
 
 
-
+print(greatest_common_factor([32, 96, 120, 80]))
